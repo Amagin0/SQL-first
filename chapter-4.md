@@ -10,7 +10,7 @@
 1)商品一覧を価格が高い順に並び替える
 select * from products order by price desc;
 
-1)商品一覧を価格が低い順に並び替える
+2)商品一覧を価格が低い順に並び替える
 select * from products order by price asc;
 -- ascは省略可能
 ```
@@ -30,7 +30,7 @@ order byで並び順を指定しないと、、、
 練習問題
 -----
 - 商品一覧を価格が高い順に並び替える
-- 価格が同じ場合は、登録順に並び替える  
+- 価格が同じ場合は登録順に並び替える  
 ※登録順...products.idが小さい順とする  
 ```sql
 select * from products order by price desc, id asc;
