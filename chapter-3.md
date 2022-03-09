@@ -11,6 +11,7 @@
 - `max(expr)`...最大値
 - `count(expr)`...行数  
 <br>
+
 - `expr`...expression:式
   - exprの部分は引数(parameter)を入力する
 
@@ -122,7 +123,7 @@ where
 都道府県ごとのユーザ数を求める
 select 
 	prefecture_id, 
-    count(*) 
+  count(*) 
 from 
 	users
 group by 
@@ -135,12 +136,12 @@ group by
 ```sql
 select 
 	request_month,
-    count(distinct user_id)
+  count(distinct user_id)
 from 
 	access_logs
 where
 	request_month >= '2017-01-01'
-    and request_month < '2018-01-01'
+  and request_month < '2018-01-01'
 group by
 	request_month;
 ```
@@ -171,12 +172,12 @@ having
 月間ユニークユーザー数が630人以上の月を一覧で取得する
 select 
 	request_month,
-    count(distinct user_id)
+  count(distinct user_id)
 from 
 	access_logs
 where
 	request_month >= '2017-01-01'
-    and request_month < '2018-01-01'
+  and request_month < '2018-01-01'
 group by
 	request_month;
 having
@@ -197,6 +198,7 @@ select文の記述順序と実行順序
 -----
 - ポイント... `select`の記述順序と実行順序が異なる  
 <br>
+
 記述順序 / 実行順序
 1. `select` / `from` 
 2. `from` / `where`
