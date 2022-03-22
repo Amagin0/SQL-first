@@ -165,3 +165,53 @@ where
 
 </details>  
 <br>
+
+練習問題３
+-----
+- 注文一覧の取得。注文詳細情報と注文情報も一覧の中に入れる
+```sql
+select 
+  o.id order_id,
+  o.user_id user_id,
+  o.amount amount,
+  o.order_time order_time,
+  p.name product_name,
+  od.product_qty qty,
+  p.price product_price
+from
+  orders o
+inner join
+  order_details od
+on o.id = od.order_id
+inner join
+  products p
+on od.product_id = p.id
+```
+
+練習問題４
+-----
+- user_id だけでなく名字、名前も一覧に追加
+
+```sql
+select 
+  o.id order_id,
+  o.user_id user_id,
+  u.last_name last_name,
+  u.first_name first_name,
+  o.amount amount,
+  o.order_time order_time,
+  p.name product_name,
+  od.product_qty qty,
+  p.price product_price
+from
+  orders o
+inner join
+  order_details od
+on o.id = od.order_id
+inner join
+  products p
+on od.product_id = p.id
+inner join
+  users u
+on o.user_id = u.id;
+```
